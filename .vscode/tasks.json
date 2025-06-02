@@ -1,0 +1,559 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // =============================CRYPTOPP++ BUILD TASKS=============================
+        {
+            "type": "cppbuild",
+            "label": "Build Executable with GCC",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g2",
+                "-O3",
+                "-DNDEBUG",
+                "${file}",
+                "-o",
+                "${fileDirname}\\gcc\\${fileBasenameNoExtension}_gcc.exe",
+                "-D_WIN32_WINNT=0x0501",
+                "-lpthread",
+                "-L${workspaceFolder}\\lib\\cryptopp\\gcc",
+                "-lcryptopp",
+                "-I${workspaceFolder}\\include\\cryptopp",
+                "-Wall",
+                "-std=c++17",
+                "&&",
+                "cd",
+                "${fileDirname}\\gcc",
+                "&&",
+                "${fileBasenameNoExtension}_gcc.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler: GCC + Auto Run"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Executable with Clang",
+            "command": "C:\\msys64\\mingw64\\bin\\clang++.exe",
+            "args": [
+                "-g2",
+                "-O3",
+                "-DNDEBUG",
+                "${file}",
+                "-o",
+                "${fileDirname}\\clang\\${fileBasenameNoExtension}_clang.exe",
+                "-D_WIN32_WINNT=0x0501",
+                "-lpthread",
+                "-L${workspaceFolder}\\lib\\cryptopp\\clang",
+                "-lcryptopp",
+                "-I${workspaceFolder}\\include\\cryptopp",
+                "-Wall",
+                "&&",
+                "cd",
+                "${fileDirname}\\clang",
+                "&&",
+                "${fileBasenameNoExtension}_clang.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler: Clang + Auto Run"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Executable with MSVC",
+            "command": "cl.exe",
+            "args": [
+                "/MTd",
+                "/GS",
+                "/O2",
+                "/W4",
+                "/Zi",
+                "/nologo",
+                "/EHsc",
+                "/I${workspaceFolder}\\include\\cryptopp",
+                "/Fo${fileDirname}\\msvc\\",
+                "/Fd${fileDirname}\\msvc\\vc140.pdb",
+                "${file}",
+                "/link",
+                "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_msvc.exe",
+                "/LIBPATH:${workspaceFolder}\\lib\\cryptopp\\msvc",
+                "cryptlib.lib",
+                "crypt32.lib",
+                "ws2_32.lib",
+                "/MACHINE:X64",
+                "&&",
+                "cd",
+                "${fileDirname}\\msvc",
+                "&&",
+                "${fileBasenameNoExtension}_msvc.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Compiler: MSVC + Auto Run"
+        },
+        // =============================SHARED LIBRARY BUILD TASKS===========================
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with GCC",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-shared",
+                "-g2",
+                "-O3",
+                "-DNDEBUG",
+                "${file}",
+                "-o",
+                "${fileDirname}\\gcc\\${fileBasenameNoExtension}_gcc.dll",
+                "-D_WIN32_WINNT=0x0501",
+                "-lpthread",
+                "-L${workspaceFolder}\\lib\\cryptopp\\gcc",
+                "-lcryptopp",
+                "-I${workspaceFolder}\\include\\cryptopp",
+                "-Wall"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler: GCC (Shared Library)"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with Clang",
+            "command": "C:\\msys64\\mingw64\\bin\\clang++.exe",
+            "args": [
+                "-shared",
+                "-g2",
+                "-O3",
+                "-DNDEBUG",
+                "${file}",
+                "-o",
+                "${fileDirname}\\clang\\${fileBasenameNoExtension}_clang.dll",
+                "-D_WIN32_WINNT=0x0501",
+                "-lpthread",
+                "-L${workspaceFolder}\\lib\\cryptopp\\clang",
+                "-lcryptopp",
+                "-I${workspaceFolder}\\include\\cryptopp",
+                "-Wall"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compiler: Clang (Shared Library)"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with MSVC",
+            "command": "cl.exe",
+            "args": [
+                "/MTd",
+                "/GS",
+                "/O2",
+                "/W4",
+                "/Zi",
+                "/nologo",
+                "/EHsc",
+                "/I${workspaceFolder}\\include\\cryptopp",
+                "/Fo${fileDirname}\\msvc\\",
+                "/Fd${fileDirname}\\msvc\\vc140.pdb",
+                "${file}",
+                "/link",
+                "/DLL",
+                "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_msvc.dll",
+                "/PDB:${fileDirname}\\msvc\\${fileBasenameNoExtension}_msvc.pdb",
+                "/LIBPATH:${workspaceFolder}\\lib\\cryptopp\\msvc",
+                "cryptlib.lib",
+                "crypt32.lib",
+                "ws2_32.lib",
+                "/MACHINE:X64"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Compiler: MSVC (Shared Library)"
+        },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "Build Shared Library with MSVC",
+        //     "command": "cl.exe",
+        //     "args": [
+        //         "/MTd",
+        //         "/GS",
+        //         "/O2",
+        //         "/W4",
+        //         "/Zi",
+        //         "/nologo",
+        //         "/EHsc",
+        //         "/I${workspaceFolder}\\include\\cryptopp",
+        //         "${file}",
+        //         "/link",
+        //         "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_msvc.dll",
+        //         "/LIBPATH:${workspaceFolder}\\lib\\cryptopp\\msvc",
+        //         "cryptlib.lib",
+        //         "crypt32.lib",
+        //         "ws2_32.lib",
+        //         "/MACHINE:X64"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": [
+        //         "$msCompile"
+        //     ],
+        //     "detail": "Compiler: MSVC (Shared Library)"
+        // },
+        // =============================OPENSSL BUILD TASKS================================
+        {
+            "type": "cppbuild",
+            "label": "Build with GCC + OpenSSL",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g2", "-O3", "-DNDEBUG", "${file}",
+                "-o", "${fileDirname}\\gcc\\${fileBasenameNoExtension}_openssl.exe",
+                "-D_WIN32_WINNT=0x0501", "-lpthread",
+                "-L${workspaceFolder}\\openssl350\\gcc\\lib64",
+                "-lssl", "-lcrypto",
+                "-lcrypt32",
+                "-lws2_32",
+                "-lpthread",
+                "-I${workspaceFolder}\\openssl350\\gcc\\include",
+                "-Wall",
+                "&&",
+                "cd",
+                "${fileDirname}\\gcc",
+                "&&",
+                "${fileBasenameNoExtension}_openssl.exe"
+            ],
+            "group": {
+                        "kind": "build",
+                        "isDefault": true
+                    },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiler: GCC with OpenSSL + Auto Run"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build with Clang + OpenSSL",
+            "command": "C:\\msys64\\mingw64\\bin\\clang++.exe",
+            "args": [
+                "-g2", "-O3", "-DNDEBUG", "${file}",
+                "-o", "${fileDirname}\\clang\\${fileBasenameNoExtension}_openssl.exe",
+                "-D_WIN32_WINNT=0x0501", "-lpthread",
+                "-L${workspaceFolder}\\openssl350\\clang\\lib64",
+                "-lssl", "-lcrypto",
+                "-lcrypt32",
+                "-lws2_32",
+                "-lpthread",
+                "-I${workspaceFolder}\\openssl350\\clang\\include",
+                "-Wall",
+                "&&",
+                "cd",
+                "${fileDirname}\\clang",
+                "&&",
+                "${fileBasenameNoExtension}_openssl.exe"
+            ],
+            "group": {
+                        "kind": "build",
+                        "isDefault": true
+                    },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiler: Clang with OpenSSL + Auto Run"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build with MSVC + OpenSSL",
+            "command": "cl.exe",
+            "args": [
+                "/MTd", "/GS", "/O2", "/W4", "/Zi", "/nologo",
+                "/EHsc", "/I${workspaceFolder}\\openssl350\\msvc\\include",
+                "/Fo${fileDirname}\\msvc\\",
+                "/Fd${fileDirname}\\msvc\\vc140.pdb",
+                "${file}",
+                "/link",
+                "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_openssl.exe",
+                "/LIBPATH:${workspaceFolder}\\openssl350\\msvc\\lib",
+                "libssl.lib", "libcrypto.lib", "crypt32.lib", "ws2_32.lib",
+                "/MACHINE:X64",
+                "&&",
+                "cd",
+                "${fileDirname}\\msvc",
+                "&&",
+                "${fileBasenameNoExtension}_openssl.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$msCompile"],
+            "detail": "Compiler: MSVC with OpenSSL + Auto Run"
+        },
+        // =============================OPENSSL SHARED======================================
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with GCC + OpenSSL",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-shared", "-g2", "-O3", "-DNDEBUG", "${file}",
+                "-o", "${fileDirname}\\gcc\\${fileBasenameNoExtension}_openssl.dll",
+                "-D_WIN32_WINNT=0x0501", "-lpthread",
+                "-L${workspaceFolder}\\openssl350\\gcc\\lib64",
+                "-lssl", "-lcrypto",
+                "-lcrypt32",
+                "-lws2_32",
+                "-lpthread",
+                "-I${workspaceFolder}\\openssl350\\gcc\\include",
+                "-Wall"
+            ],
+            "group": {
+                        "kind": "build",
+                        "isDefault": true
+                    },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiler: GCC with OpenSSL (Shared Library)"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with Clang + OpenSSL",
+            "command": "C:\\msys64\\mingw64\\bin\\clang++.exe",
+            "args": [
+                "-shared", "-g2", "-O3", "-DNDEBUG", "${file}",
+                "-o", "${fileDirname}\\clang\\${fileBasenameNoExtension}_openssl.dll",
+                "-D_WIN32_WINNT=0x0501", "-lpthread",
+                "-L${workspaceFolder}\\openssl350\\clang\\lib64",
+                "-lssl", "-lcrypto",
+                "-lcrypt32",
+                "-lws2_32",
+                "-lpthread",
+                "-I${workspaceFolder}\\openssl350\\clang\\include",
+                "-Wall"
+            ],
+            "group": {
+                        "kind": "build",
+                        "isDefault": true
+                    },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiler: Clang with OpenSSL (Shared Library)"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build Shared Library with MSVC + OpenSSL",
+            "command": "cl.exe",
+            "args": [
+                "/MTd",
+                "/GS",
+                "/O2",
+                "/W4",
+                "/Zi",
+                "/nologo",
+                "/EHsc",
+                "/I${workspaceFolder}\\openssl350\\msvc\\include",
+                "/Fo${fileDirname}\\msvc\\",
+                "/Fd${fileDirname}\\msvc\\vc140.pdb",
+                "${file}",
+                "/link",
+                "/DLL",
+                "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_openssl.dll",
+                "/PDB:${fileDirname}\\msvc\\${fileBasenameNoExtension}_openssl.pdb",
+                "/LIBPATH:${workspaceFolder}\\openssl350\\msvc\\lib",
+                "libssl.lib",
+                "libcrypto.lib",
+                "crypt32.lib",
+                "ws2_32.lib",
+                "/MACHINE:X64"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Compiler: MSVC with OpenSSL (Shared Library)"
+        },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "Build Shared Library with MSVC + OpenSSL",
+        //     "command": "cl.exe",
+        //     "args": [
+        //         "/MTd", "/GS", "/O2", "/W4", "/Zi", "/nologo",
+        //         "/EHsc", "/I${workspaceFolder}\\include\\cryptopp",
+        //         "${file}",
+        //         "/link",
+        //         "/OUT:${fileDirname}\\msvc\\${fileBasenameNoExtension}_openssl.dll",
+        //         "/LIBPATH:${workspaceFolder}\\openssl350\\msvc\\lib64",
+        //         "libssl.lib", "libcrypto.lib", "crypt32.lib", "ws2_32.lib",
+        //         "/MACHINE:X64"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": ["$msCompile"],
+        //     "detail": "Compiler: MSVC with OpenSSL (Shared Library)"
+        // },
+        // =============================C# BUILD TASKS======================================
+        {
+            "label": "build-csc",
+            "type": "shell",
+            "command": "csc.exe",
+            "args": [
+                "/nologo",
+                "/debug",
+                "/optimize+",
+                "/warn:4",
+                "${file}",
+                "/out:${fileDirname}\\${fileBasenameNoExtension}_cs.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+            "detail": "Build single .cs file using csc"
+        },
+        // =============================JAVA BUILD TASKS====================================
+        {
+            "label": "javac-compile",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Compile Java file"
+        },
+        {
+            "label": "java-run",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Run Java class"
+        },
+        // =============================JNI BUILD TASKS=====================================
+        {
+            "label": "jni-step1-compile-java",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "${fileBasenameNoExtension}.java"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "JNI Step 1: Compile Java file"
+        },
+        {
+            "label": "jni-step2-generate-header",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "-h", ".",
+                "${fileBasenameNoExtension}.java"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "JNI Step 2: Generate JNI header"
+        },
+        {
+            "label": "jni-step3-compile-cpp",
+            "type": "shell",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-I\"E:\\jdk-11.0.27\\include\"",
+                "-I\"E:\\jdk-11.0.27\\include\\win32\"",
+                "-I\"D:\\cryptopp-master\\include\\cryptopp\"",
+                "-shared",
+                "-o",
+                "${fileBasenameNoExtension}Lib.dll",
+                "${fileBasenameNoExtension}JNI.cpp",
+                "-L\"D:\\cryptopp-master\\lib\\cryptopp\\gcc\"",
+                "-lcryptopp"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "build",
+            "problemMatcher": ["$gcc"],
+            "detail": "JNI Step 3: Compile C++ to DLL"
+        },
+        {
+            "label": "jni-step4-run-java",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "--enable-native-access=ALL-UNNAMED",
+                "-Djava.library.path=.",
+                "${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/C"]
+                }
+            },
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "JNI Step 4: Run Java with native library (No warnings)"
+        },
+        // =============================JNI BUILD ALL IN ONE===============================
+        {
+            "label": "jni-build-and-run-all",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "jni-step1-compile-java",
+                "jni-step2-generate-header", 
+                "jni-step3-compile-cpp",
+                "jni-step4-run-java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "JNI: Build và chạy tất cả (Compile Java → Generate Header → Compile C++ → Run)",
+            "problemMatcher": []
+        }
+    ]
+}
