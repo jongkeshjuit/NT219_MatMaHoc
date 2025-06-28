@@ -1,0 +1,14 @@
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\bin\Debug\net9.0-windows\CryptoCompilerGUI.exe
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\bin\Debug\net9.0-windows\CryptoCompilerGUI.deps.json
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\bin\Debug\net9.0-windows\CryptoCompilerGUI.runtimeconfig.json
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\bin\Debug\net9.0-windows\CryptoCompilerGUI.dll
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\bin\Debug\net9.0-windows\CryptoCompilerGUI.pdb
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.AssemblyInfoInputs.cache
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.AssemblyInfo.cs
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.csproj.CoreCompileInputs.cache
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.dll
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\refint\CryptoCompilerGUI.dll
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.pdb
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\CryptoCompilerGUI.genruntimeconfig.cache
+D:\WorkSpace\FinalNT219\c#\CryptoCompilerGUI\obj\Debug\net9.0-windows\ref\CryptoCompilerGUI.dll

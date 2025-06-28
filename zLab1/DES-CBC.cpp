@@ -18,31 +18,31 @@ using std::exit;
 #include <cctype>
 
 // Cryptopp libraries
-#include "osrng.h"
+#include "cryptopp/osrng.h"
 using CryptoPP::AutoSeededRandomPool;
-#include "cryptlib.h"
+#include "cryptopp/cryptlib.h"
 using CryptoPP::Exception;
 
-#include "hex.h"
+#include "cryptopp/hex.h"
 using CryptoPP::HexDecoder;
 using CryptoPP::HexEncoder;
 
-#include "base64.h"
+#include "cryptopp/base64.h"
 using CryptoPP::Base64Decoder;
 using CryptoPP::Base64Encoder;
 
-#include "filters.h"
+#include "cryptopp/filters.h"
 using CryptoPP::StreamTransformationFilter;
 using CryptoPP::StringSink;
 using CryptoPP::StringSource;
-#include "des.h"
+#include "cryptopp/des.h"
 using CryptoPP::DES;
 
-#include "modes.h"
+#include "cryptopp/modes.h"
 using CryptoPP::CBC_Mode;
 using CryptoPP::ECB_Mode;
 
-#include "secblock.h"
+#include "cryptopp/secblock.h"
 using CryptoPP::SecByteBlock;
 
 int main(int argc, char *argv[])

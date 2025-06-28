@@ -1,0 +1,21 @@
+{
+  "gcc_path": "/usr/bin/g++",
+  "clang_path": "/usr/bin/clang++",
+  "msvc_path": "",
+  "csc_path": "/usr/bin/mcs",
+  "dotnet_path": "/usr/bin/dotnet",
+  "javac_path": "/usr/bin/javac",
+  "java_path": "/usr/bin/java",
+  "cryptopp_include": "/usr/include/cryptopp",
+  "cryptopp_lib_gcc": "/usr/lib/x86_64-linux-gnu",
+  "cryptopp_lib_clang": "/usr/lib/x86_64-linux-gnu",
+  "cryptopp_lib_msvc": "",
+  "openssl_include_gcc": "/usr/include/openssl",
+  "openssl_lib_gcc": "/usr/lib/x86_64-linux-gnu",
+  "openssl_include_clang": "/usr/include/openssl",
+  "openssl_lib_clang": "/usr/lib/x86_64-linux-gnu",
+  "openssl_include_msvc": "",
+  "openssl_lib_msvc": "",
+  "jdk_include": "/usr/lib/jvm/default-java/include",
+  "jdk_include_linux": "/usr/lib/jvm/default-java/include/linux"
+}

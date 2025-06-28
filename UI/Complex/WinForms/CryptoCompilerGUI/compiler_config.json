@@ -1,0 +1,20 @@
+{
+  "gcc_path": "C:\\msys64\\mingw64\\bin\\g\u002B\u002B.exe",
+  "clang_path": "C:\\msys64\\mingw64\\bin\\clang\u002B\u002B.exe",
+  "msvc_path": "cl.exe",
+  "csc_path": "csc.exe",
+  "javac_path": "javac",
+  "java_path": "java",
+  "cryptopp_include": "D:/cryptopp-master/include",
+  "cryptopp_lib_gcc": "D:/cryptopp-master/lib/cryptopp/gcc",
+  "cryptopp_lib_clang": "D:/cryptopp-master/lib/cryptopp/clang",
+  "cryptopp_lib_msvc": "D:/cryptopp-master/lib/cryptopp/msvc",
+  "openssl_include_gcc": "D:/Labs_Crypto/openssl350/gcc/include/openssl",
+  "openssl_lib_gcc": "D:/Labs_Crypto/openssl350/gcc/lib64",
+  "openssl_include_clang": "D:/Labs_Crypto/openssl350/clang/include/openssl",
+  "openssl_lib_clang": "D:/Labs_Crypto/openssl350/clang/lib64",
+  "openssl_include_msvc": "D:/Labs_Crypto/openssl350/msvc/include/openssl",
+  "openssl_lib_msvc": "D:/Labs_Crypto/openssl350/msvc/lib64",
+  "jdk_include": "E:/jdk-24/include",
+  "jdk_include_win32": "E:/jdk-24/include/win32"
+}

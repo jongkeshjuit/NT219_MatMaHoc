@@ -1,0 +1,71 @@
+{
+  "Paths": {
+    "cryptopp_root": "D:\\cryptopp-master",
+    "openssl_root": "D:\\Labs_Crypto\\openssl350",
+    "msys64_root": "C:\\msys64\\mingw64",
+    "source_dir": "."
+  },
+  "Compilers": {
+    "gcc": {
+      "Executable": "C:\\msys64\\mingw64\\bin\\g\u002B\u002B.exe",
+      "Flags": [
+        "-g2",
+        "-O3",
+        "-DNDEBUG",
+        "-Wall",
+        "-std=c\u002B\u002B17"
+      ],
+      "Libs": [
+        "-lpthread"
+      ]
+    },
+    "clang": {
+      "Executable": "C:\\msys64\\mingw64\\bin\\clang\u002B\u002B.exe",
+      "Flags": [
+        "-g2",
+        "-O3",
+        "-DNDEBUG",
+        "-Wall",
+        "-std=c\u002B\u002B17"
+      ],
+      "Libs": [
+        "-lpthread"
+      ]
+    },
+    "msvc": {
+      "Executable": "cl.exe",
+      "Flags": [
+        "/MTd",
+        "/O2",
+        "/W4",
+        "/nologo",
+        "/EHsc"
+      ],
+      "Libs": [
+        "crypt32.lib",
+        "ws2_32.lib"
+      ]
+    }
+  },
+  "Libraries": {
+    "cryptopp": {
+      "GccLib": "cryptopp",
+      "ClangLib": "cryptopp",
+      "MsvcLib": "cryptlib.lib"
+    },
+    "openssl": {
+      "GccLib": [
+        "ssl",
+        "crypto"
+      ],
+      "ClangLib": [
+        "ssl",
+        "crypto"
+      ],
+      "MsvcLib": [
+        "libssl.lib",
+        "libcrypto.lib"
+      ]
+    }
+  }
+}
