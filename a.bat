@@ -951,7 +951,7 @@ goto :eof
 echo.
 echo BuildHelper - Công cụ biên dịch đơn giản cho CryptoPP
 echo ===================================================
-echo Phiên bản: 2.1
+echo Phiên bản: 1.0 by Vương Thành Đạt
 echo.
 echo Sử dụng: %0 [command] [file_path] [extra_args]
 echo.
